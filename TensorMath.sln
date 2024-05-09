@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5317FD43-7D2F-4F4F-8444-B6AA1285C4BD}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TensorMath", "src\TensorMath\TensorMath.fsproj", "{03276E48-6B47-463F-A5BC-59580A623ADB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BAA394CB-3D6F-4CE9-BAE8-56603DBE7793}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TensorMath.Tests", "tests\TensorMath.Tests\TensorMath.Tests.fsproj", "{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{7007FA68-0E95-42A0-B25C-A9BBA6071B34}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "build", "build\build.fsproj", "{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".ci", ".ci", "{CD408BBB-CFDB-4889-AA66-6F0935B7AD18}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
+		.github\workflows\deploy-gh-pages.yml = .github\workflows\deploy-gh-pages.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03276E48-6B47-463F-A5BC-59580A623ADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03276E48-6B47-463F-A5BC-59580A623ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03276E48-6B47-463F-A5BC-59580A623ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03276E48-6B47-463F-A5BC-59580A623ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{03276E48-6B47-463F-A5BC-59580A623ADB} = {5317FD43-7D2F-4F4F-8444-B6AA1285C4BD}
+		{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460} = {BAA394CB-3D6F-4CE9-BAE8-56603DBE7793}
+		{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6} = {7007FA68-0E95-42A0-B25C-A9BBA6071B34}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A89F710-DE41-4B47-B450-17CCB1B3A0DC}
+	EndGlobalSection
+EndGlobal
