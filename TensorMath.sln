@@ -9,8 +9,6 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TensorMath", "src\TensorMat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BAA394CB-3D6F-4CE9-BAE8-56603DBE7793}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TensorMath.Tests", "tests\TensorMath.Tests\TensorMath.Tests.fsproj", "{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{7007FA68-0E95-42A0-B25C-A9BBA6071B34}"
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "build", "build\build.fsproj", "{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6}"
@@ -20,6 +18,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".ci", ".ci", "{CD408BBB-CFD
 		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
 		.github\workflows\deploy-gh-pages.yml = .github\workflows\deploy-gh-pages.yml
 	EndProjectSection
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TensorMath.Backends.Reference", "src\TensorMath.Backends.Reference\TensorMath.Backends.Reference.fsproj", "{F973F65A-3E9F-4780-84A8-E10C5EEA86F1}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TensorMath.Tests", "tests\TensorMath.Tests\TensorMath.Tests.fsproj", "{6A7CBDA7-5E2B-4818-A152-DE64031ACCEA}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TensorMath.Backends.TestDuplicate", "tests\TensorMath.Backends.TestDuplicate\TensorMath.Backends.TestDuplicate.fsproj", "{03D729EA-CE26-4AF4-887E-4339E38DBF11}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TensorMath.Backends.Torch", "src\TensorMath.Backends.Torch\TensorMath.Backends.Torch.fsproj", "{D03FFF26-A7AA-4C9F-B226-D0F07FD08A5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bundles", "bundles", "{26AD5F3B-A910-4128-971C-FE9780005B1E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TensorMath-cpu", "bundles\TensorMath-cpu\TensorMath-cpu.fsproj", "{13198191-E9B3-44B7-8F25-8013F2020900}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TensorMath-lite", "bundles\TensorMath-lite\TensorMath-lite.fsproj", "{3E208A02-EFBC-4450-A5EF-BEC5139F1E55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,22 +43,47 @@ Global
 		{03276E48-6B47-463F-A5BC-59580A623ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03276E48-6B47-463F-A5BC-59580A623ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03276E48-6B47-463F-A5BC-59580A623ADB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F973F65A-3E9F-4780-84A8-E10C5EEA86F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F973F65A-3E9F-4780-84A8-E10C5EEA86F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F973F65A-3E9F-4780-84A8-E10C5EEA86F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F973F65A-3E9F-4780-84A8-E10C5EEA86F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A7CBDA7-5E2B-4818-A152-DE64031ACCEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A7CBDA7-5E2B-4818-A152-DE64031ACCEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A7CBDA7-5E2B-4818-A152-DE64031ACCEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A7CBDA7-5E2B-4818-A152-DE64031ACCEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03D729EA-CE26-4AF4-887E-4339E38DBF11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03D729EA-CE26-4AF4-887E-4339E38DBF11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03D729EA-CE26-4AF4-887E-4339E38DBF11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03D729EA-CE26-4AF4-887E-4339E38DBF11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D03FFF26-A7AA-4C9F-B226-D0F07FD08A5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D03FFF26-A7AA-4C9F-B226-D0F07FD08A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D03FFF26-A7AA-4C9F-B226-D0F07FD08A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D03FFF26-A7AA-4C9F-B226-D0F07FD08A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13198191-E9B3-44B7-8F25-8013F2020900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13198191-E9B3-44B7-8F25-8013F2020900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13198191-E9B3-44B7-8F25-8013F2020900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13198191-E9B3-44B7-8F25-8013F2020900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E208A02-EFBC-4450-A5EF-BEC5139F1E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E208A02-EFBC-4450-A5EF-BEC5139F1E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E208A02-EFBC-4450-A5EF-BEC5139F1E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E208A02-EFBC-4450-A5EF-BEC5139F1E55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{03276E48-6B47-463F-A5BC-59580A623ADB} = {5317FD43-7D2F-4F4F-8444-B6AA1285C4BD}
-		{6D6C1F8A-1AFE-4BEE-A073-24515FCC6460} = {BAA394CB-3D6F-4CE9-BAE8-56603DBE7793}
 		{D305E2AA-681F-47ED-87C8-7A9F6EA2F1A6} = {7007FA68-0E95-42A0-B25C-A9BBA6071B34}
+		{F973F65A-3E9F-4780-84A8-E10C5EEA86F1} = {5317FD43-7D2F-4F4F-8444-B6AA1285C4BD}
+		{6A7CBDA7-5E2B-4818-A152-DE64031ACCEA} = {BAA394CB-3D6F-4CE9-BAE8-56603DBE7793}
+		{03D729EA-CE26-4AF4-887E-4339E38DBF11} = {BAA394CB-3D6F-4CE9-BAE8-56603DBE7793}
+		{D03FFF26-A7AA-4C9F-B226-D0F07FD08A5F} = {5317FD43-7D2F-4F4F-8444-B6AA1285C4BD}
+		{13198191-E9B3-44B7-8F25-8013F2020900} = {26AD5F3B-A910-4128-971C-FE9780005B1E}
+		{3E208A02-EFBC-4450-A5EF-BEC5139F1E55} = {26AD5F3B-A910-4128-971C-FE9780005B1E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A89F710-DE41-4B47-B450-17CCB1B3A0DC}

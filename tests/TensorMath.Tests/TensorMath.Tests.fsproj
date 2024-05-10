@@ -9,16 +9,43 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Tests.fs" />
+    <Compile Include="TestUtils.fs" />
+    <Compile Include="TestCombo.fs" />
+    <Compile Include="TestCombos.fs" />
+    <Compile Include="TestTensor.fs" />
+    <Compile Include="TestTensor.Conv.fs" />
+    <Compile Include="TestTensor.MaxPool.fs" />
+    <Compile Include="TestTensorMath.fs" />
+    <Compile Include="TestRandom.fs" />
+    <Compile Include="TestOp.AvgPool.fs" />
+    <Compile Include="TestOp.BMM.fs" />
+    <Compile Include="TestOp.Inv.fs" />
+    <Compile Include="TestOp.Det.fs" />
+    <Compile Include="TestOp.Norm.fs" />
+    <Compile Include="TestOp.Outer.fs" />
+    <Compile Include="TestOp.Solve.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="coverlet.collector" Version="6.0.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageReference Include="xunit" Version="2.5.3" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
-    <PackageReference Include="FsCheck.Xunit" Version="3.0.0-rc3" />
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageReference Include="NUnit" Version="4.1.0" />
+    <PackageReference Include="NUnit.Analyzers" Version="4.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\TensorMath.Backends.Reference\TensorMath.Backends.Reference.fsproj" />
+    <ProjectReference Include="..\..\src\TensorMath.Backends.Torch\TensorMath.Backends.Torch.fsproj" />
+    <ProjectReference Include="..\..\src\TensorMath\TensorMath.fsproj" />
+    <ProjectReference Include="..\TensorMath.Backends.TestDuplicate\TensorMath.Backends.TestDuplicate.fsproj" />
   </ItemGroup>
 
 </Project>
